@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Star, Award, Shield, CheckCircle } from "lucide-react";
 import modernInteriorHero from "@/assets/modern-interior-hero.jpg";
-
 export const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -14,22 +13,19 @@ export const HeroSection = () => {
     bedrooms: "",
     area: ""
   });
-
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
-
-  return (
-    <section className="relative min-h-screen flex flex-col justify-center px-4 py-16 overflow-hidden">
+  return <section className="relative min-h-screen flex flex-col justify-center px-4 py-16 overflow-hidden">
       {/* Background Image with Enhanced Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${modernInteriorHero})` }}>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${modernInteriorHero})`
+    }}>
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
       </div>
@@ -37,41 +33,29 @@ export const HeroSection = () => {
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent/30 rounded-full float-animation"></div>
-        <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-accent/20 rounded-full float-animation" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-accent/40 rounded-full float-animation" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-accent/20 rounded-full float-animation" style={{
+        animationDelay: '2s'
+      }}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-accent/40 rounded-full float-animation" style={{
+        animationDelay: '4s'
+      }}></div>
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto">
         
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="mb-6 flex justify-center space-x-2">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 text-accent fill-accent animate-pulse" style={{ animationDelay: `${i * 0.2}s` }} />
-            ))}
-          </div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
+          
+          <h1 className="md:text-6xl font-black text-white leading-tight mb-6 lg:text-3xl text-3xl">
             Está a Pensar <span className="gradient-text">Vender</span> a Sua Casa?
           </h1>
           <p className="mt-6 text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Receba uma avaliação <span className="text-accent font-semibold">100% gratuita</span> e sem compromisso!
+            Receba uma avaliação <span className="text-accent font-semibold">
+100% gratuita</span> e sem compromisso!
           </p>
           
           {/* Trust indicators */}
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-white/80">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">Avaliação Certificada</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">100% Seguro</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Award className="w-5 h-5 text-accent" />
-              <span className="text-sm font-medium">Especialista Local</span>
-            </div>
-          </div>
+          
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -80,11 +64,7 @@ export const HeroSection = () => {
           <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <img 
-                src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" 
-                alt="Miguel Carvalho - Consultor Imobiliário" 
-                className="relative w-full max-w-md h-auto rounded-2xl object-cover shadow-2xl transform transition-all duration-500 group-hover:scale-105" 
-              />
+              <img src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" alt="Miguel Carvalho - Consultor Imobiliário" className="relative w-full max-w-md h-auto rounded-2xl object-cover shadow-2xl transform transition-all duration-500 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-2xl">
                 <h3 className="text-2xl font-bold text-white mb-1">Miguel Carvalho</h3>
                 <p className="text-accent font-medium">Consultor Imobiliário Certificado</p>
@@ -109,32 +89,23 @@ export const HeroSection = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 
                 {/* Enhanced Inputs */}
-                <Input 
-                  type="text" 
-                  placeholder="Nome completo *" 
-                  value={formData.name} 
-                  onChange={e => setFormData({ ...formData, name: e.target.value })} 
-                  className="form-input-enhanced" 
-                  required 
-                />
-                <Input 
-                  type="email" 
-                  placeholder="Email *" 
-                  value={formData.email} 
-                  onChange={e => setFormData({ ...formData, email: e.target.value })} 
-                  className="form-input-enhanced" 
-                  required 
-                />
-                <Input 
-                  type="tel" 
-                  placeholder="Telefone *" 
-                  value={formData.phone} 
-                  onChange={e => setFormData({ ...formData, phone: e.target.value })} 
-                  className="form-input-enhanced" 
-                  required 
-                />
+                <Input type="text" placeholder="Nome completo *" value={formData.name} onChange={e => setFormData({
+                ...formData,
+                name: e.target.value
+              })} className="form-input-enhanced" required />
+                <Input type="email" placeholder="Email *" value={formData.email} onChange={e => setFormData({
+                ...formData,
+                email: e.target.value
+              })} className="form-input-enhanced" required />
+                <Input type="tel" placeholder="Telefone *" value={formData.phone} onChange={e => setFormData({
+                ...formData,
+                phone: e.target.value
+              })} className="form-input-enhanced" required />
                 
-                <Select onValueChange={value => setFormData({ ...formData, propertyType: value })}>
+                <Select onValueChange={value => setFormData({
+                ...formData,
+                propertyType: value
+              })}>
                   <SelectTrigger className="form-input-enhanced text-gray-700">
                     <SelectValue placeholder="Tipo de Imóvel *" />
                   </SelectTrigger>
@@ -147,7 +118,10 @@ export const HeroSection = () => {
                 </Select>
                 
                 <div className="grid grid-cols-2 gap-4">
-                  <Select onValueChange={value => setFormData({ ...formData, bedrooms: value })}>
+                  <Select onValueChange={value => setFormData({
+                  ...formData,
+                  bedrooms: value
+                })}>
                     <SelectTrigger className="form-input-enhanced text-gray-700">
                       <SelectValue placeholder="Quartos" />
                     </SelectTrigger>
@@ -160,13 +134,10 @@ export const HeroSection = () => {
                       <SelectItem value="5+">T5+</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Input 
-                    type="number" 
-                    placeholder="Área (m²)" 
-                    value={formData.area} 
-                    onChange={e => setFormData({ ...formData, area: e.target.value })} 
-                    className="form-input-enhanced" 
-                  />
+                  <Input type="number" placeholder="Área (m²)" value={formData.area} onChange={e => setFormData({
+                  ...formData,
+                  area: e.target.value
+                })} className="form-input-enhanced" />
                 </div>
 
                 <Button type="submit" className="btn-cta w-full text-lg font-bold">
@@ -189,6 +160,5 @@ export const HeroSection = () => {
           
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
