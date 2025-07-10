@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+// A Label já não é necessária para o formulário, mas pode ser usada noutros locais
+// import { Label } from "@/components/ui/label"; 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent } from "@/components/ui/card";
 import modernInteriorHero from "@/assets/modern-interior-hero.jpg";
-import { Trophy, Star } from "lucide-react";
+
 export const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -15,151 +15,123 @@ export const HeroSection = () => {
     bedrooms: "",
     area: ""
   });
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
-  return <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+
+  return (
+    <section className="relative min-h-screen flex flex-col justify-center px-4 py-16">
       {/* Background Image with Dark Blue Overlay */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url(${modernInteriorHero})`
-    }}>
-        <div className="absolute inset-0 bg-primary/75"></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${modernInteriorHero})` }}>
+        <div className="absolute inset-0 bg-blue-900/80"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* H1 Centralizado no Topo */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-6 leading-tight lg:text-5xl">
+      {/* Content Container */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
+        
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
             Está a Pensar Vender a Sua Casa?
           </h1>
-          <p className="text-xl lg:text-2xl text-white/95 font-medium">
+          <p className="mt-4 text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto">
             Receba uma avaliação 100% gratuita e sem compromisso!
           </p>
         </div>
 
-        {/* Imagem do Miguel e Formulário Centralizados */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
-          {/* Imagem do Miguel e Informações Profissionais */}
-          <div className="text-center">
-            {/* Professional Photo - Circular with elegant border */}
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <img src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" alt="Miguel - Consultor Imobiliário" className="w-80 h-96 lg:w-96 lg:h-[32rem] object-cover shadow-2xl" />
-              </div>
-            </div>
-
-            {/* Professional Information - Elegant text block */}
-            <div className="text-center space-y-3">
-              <h3 className="text-2xl lg:text-3xl font-bold text-white">
-                Miguel Carvalho
-              </h3>
-              <p className="text-lg text-white/90 font-medium">
-                Consultor Imobiliário Certificado
-              </p>
-              <div className="flex items-center justify-center gap-2 text-accent">
-                <Trophy className="w-5 h-5" />
-                <span className="text-lg font-semibold text-white">
-                  +2000 Transações Realizadas
-                </span>
-                <Star className="w-5 h-5 fill-accent" />
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          
+          {/* Coluna Esquerda: Imagem Grande do Miguel (sem contorno) */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" 
+                alt="Miguel Carvalho - Consultor Imobiliário" 
+                className="w-full max-w-md h-auto rounded-lg object-cover shadow-2xl" // Borda removida
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent rounded-b-lg">
+                <h3 className="text-xl font-bold text-white">Miguel Carvalho</h3>
+                <p className="text-white/80">Consultor Imobiliário Certificado</p>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="flex justify-center">
-            <Card className="w-full max-w-md shadow-2xl border-0 bg-white">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">
-                    Avaliação Gratuita
-                  </h2>
-                  <p className="text-muted-foreground">
-                    Preencha os dados e receba a sua avaliação
-                  </p>
+          {/* Coluna Direita: Formulário (com placeholders e campos destacados) */}
+          <div className="flex justify-center lg:justify-start">
+            <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-2xl">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                
+                {/* Inputs com placeholder, sem Label */}
+                <Input 
+                  type="text" 
+                  placeholder="Nome *" 
+                  value={formData.name} 
+                  onChange={e => setFormData({ ...formData, name: e.target.value })} 
+                  className="h-12 bg-slate-100 border-slate-200 focus:ring-2 focus:ring-yellow-400" 
+                  required 
+                />
+                <Input 
+                  type="email" 
+                  placeholder="E-mail *" 
+                  value={formData.email} 
+                  onChange={e => setFormData({ ...formData, email: e.target.value })} 
+                  className="h-12 bg-slate-100 border-slate-200 focus:ring-2 focus:ring-yellow-400" 
+                  required 
+                />
+                <Input 
+                  type="tel" 
+                  placeholder="Telefone *" 
+                  value={formData.phone} 
+                  onChange={e => setFormData({ ...formData, phone: e.target.value })} 
+                  className="h-12 bg-slate-100 border-slate-200 focus:ring-2 focus:ring-yellow-400" 
+                  required 
+                />
+                
+                <Select onValueChange={value => setFormData({ ...formData, propertyType: value })}>
+                  <SelectTrigger className="h-12 bg-slate-100 border-slate-200 text-gray-500 focus:ring-2 focus:ring-yellow-400">
+                    <SelectValue placeholder="Tipo de Imóvel *" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="apartamento">Apartamento</SelectItem>
+                    <SelectItem value="moradia">Moradia</SelectItem>
+                    <SelectItem value="terreno">Terreno</SelectItem>
+                    <SelectItem value="comercial">Comercial</SelectItem>
+                  </SelectContent>
+                </Select>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <Select onValueChange={value => setFormData({ ...formData, bedrooms: value })}>
+                    <SelectTrigger className="h-12 bg-slate-100 border-slate-200 text-gray-500 focus:ring-2 focus:ring-yellow-400">
+                      <SelectValue placeholder="Nº de Quartos" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="0">T0</SelectItem><SelectItem value="1">T1</SelectItem><SelectItem value="2">T2</SelectItem><SelectItem value="3">T3</SelectItem><SelectItem value="4">T4</SelectItem><SelectItem value="5+">T5+</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Input 
+                    type="number" 
+                    placeholder="Área (m²)" 
+                    value={formData.area} 
+                    onChange={e => setFormData({ ...formData, area: e.target.value })} 
+                    className="h-12 bg-slate-100 border-slate-200 focus:ring-2 focus:ring-yellow-400" 
+                  />
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-medium">Nome *</Label>
-                    <Input id="name" type="text" value={formData.name} onChange={e => setFormData({
-                    ...formData,
-                    name: e.target.value
-                  })} className="h-12 border-2 focus:border-accent" required />
-                  </div>
+                <Button type="submit" className="w-full h-12 text-lg bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold shadow-lg transition-transform transform hover:scale-105 mt-4">
+                  Obter Avaliação Grátis
+                </Button>
+                
+                <p className="text-xs text-center text-gray-500 pt-2">
+                  Os seus dados estão seguros. Respeitamos a sua privacidade.
+                </p>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-medium">E-mail *</Label>
-                    <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
-                    ...formData,
-                    email: e.target.value
-                  })} className="h-12 border-2 focus:border-accent" required />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-sm font-medium">Telefone *</Label>
-                    <Input id="phone" type="tel" value={formData.phone} onChange={e => setFormData({
-                    ...formData,
-                    phone: e.target.value
-                  })} className="h-12 border-2 focus:border-accent" required />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label className="text-sm font-medium">Tipo de Imóvel *</Label>
-                    <Select onValueChange={value => setFormData({
-                    ...formData,
-                    propertyType: value
-                  })}>
-                      <SelectTrigger className="h-12 border-2 focus:border-accent">
-                        <SelectValue placeholder="Seleccione o tipo" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="apartamento">Apartamento</SelectItem>
-                        <SelectItem value="moradia">Moradia</SelectItem>
-                        <SelectItem value="terreno">Terreno</SelectItem>
-                        <SelectItem value="comercial">Imóvel Comercial</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label className="text-sm font-medium">Nº de Quartos</Label>
-                    <Select onValueChange={value => setFormData({
-                    ...formData,
-                    bedrooms: value
-                  })}>
-                      <SelectTrigger className="h-12 border-2 focus:border-accent">
-                        <SelectValue placeholder="Seleccione" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="0">0 (Estúdio)</SelectItem>
-                        <SelectItem value="1">1 Quarto</SelectItem>
-                        <SelectItem value="2">2 Quartos</SelectItem>
-                        <SelectItem value="3">3 Quartos</SelectItem>
-                        <SelectItem value="4">4 Quartos</SelectItem>
-                        <SelectItem value="5+">5+ Quartos</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="area" className="text-sm font-medium">Área (m²)</Label>
-                    <Input id="area" type="number" value={formData.area} onChange={e => setFormData({
-                    ...formData,
-                    area: e.target.value
-                  })} className="h-12 border-2 focus:border-accent" placeholder="Ex: 120" />
-                  </div>
-
-                  <Button type="submit" className="w-full h-12 text-lg bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-                    Obter Avaliação Grátis
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+              </form>
+            </div>
           </div>
+          
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
