@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent } from "@/components/ui/card";
 import modernInteriorHero from "@/assets/modern-interior-hero.jpg";
 import { Trophy, Star } from "lucide-react";
-
 export const HeroSection = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,19 +15,15 @@ export const HeroSection = () => {
     bedrooms: "",
     area: ""
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
+  return <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
       {/* Background Image with Dark Blue Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${modernInteriorHero})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      backgroundImage: `url(${modernInteriorHero})`
+    }}>
         <div className="absolute inset-0 bg-primary/75"></div>
       </div>
 
@@ -36,7 +31,7 @@ export const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* H1 Centralizado no Topo */}
         <div className="text-center mb-16">
-          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl font-bold text-white mb-6 leading-tight lg:text-5xl">
             Está a Pensar Vender a Sua Casa?
           </h1>
           <p className="text-xl lg:text-2xl text-white/95 font-medium">
@@ -51,11 +46,7 @@ export const HeroSection = () => {
             {/* Professional Photo - Circular with elegant border */}
             <div className="flex justify-center mb-8">
               <div className="relative">
-                <img 
-                  src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" 
-                  alt="Miguel - Consultor Imobiliário"
-                  className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl border-4 border-white/30"
-                />
+                <img src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" alt="Miguel - Consultor Imobiliário" className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl border-4 border-white/30" />
               </div>
             </div>
 
@@ -93,43 +84,34 @@ export const HeroSection = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="text-sm font-medium">Nome *</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-12 border-2 focus:border-accent"
-                      required
-                    />
+                    <Input id="name" type="text" value={formData.name} onChange={e => setFormData({
+                    ...formData,
+                    name: e.target.value
+                  })} className="h-12 border-2 focus:border-accent" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-sm font-medium">E-mail *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-12 border-2 focus:border-accent"
-                      required
-                    />
+                    <Input id="email" type="email" value={formData.email} onChange={e => setFormData({
+                    ...formData,
+                    email: e.target.value
+                  })} className="h-12 border-2 focus:border-accent" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="phone" className="text-sm font-medium">Telefone *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="h-12 border-2 focus:border-accent"
-                      required
-                    />
+                    <Input id="phone" type="tel" value={formData.phone} onChange={e => setFormData({
+                    ...formData,
+                    phone: e.target.value
+                  })} className="h-12 border-2 focus:border-accent" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label className="text-sm font-medium">Tipo de Imóvel *</Label>
-                    <Select onValueChange={(value) => setFormData({ ...formData, propertyType: value })}>
+                    <Select onValueChange={value => setFormData({
+                    ...formData,
+                    propertyType: value
+                  })}>
                       <SelectTrigger className="h-12 border-2 focus:border-accent">
                         <SelectValue placeholder="Seleccione o tipo" />
                       </SelectTrigger>
@@ -144,7 +126,10 @@ export const HeroSection = () => {
 
                   <div className="space-y-2">
                     <Label className="text-sm font-medium">Nº de Quartos</Label>
-                    <Select onValueChange={(value) => setFormData({ ...formData, bedrooms: value })}>
+                    <Select onValueChange={value => setFormData({
+                    ...formData,
+                    bedrooms: value
+                  })}>
                       <SelectTrigger className="h-12 border-2 focus:border-accent">
                         <SelectValue placeholder="Seleccione" />
                       </SelectTrigger>
@@ -161,20 +146,13 @@ export const HeroSection = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="area" className="text-sm font-medium">Área (m²)</Label>
-                    <Input
-                      id="area"
-                      type="number"
-                      value={formData.area}
-                      onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-                      className="h-12 border-2 focus:border-accent"
-                      placeholder="Ex: 120"
-                    />
+                    <Input id="area" type="number" value={formData.area} onChange={e => setFormData({
+                    ...formData,
+                    area: e.target.value
+                  })} className="h-12 border-2 focus:border-accent" placeholder="Ex: 120" />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    className="w-full h-12 text-lg bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-                  >
+                  <Button type="submit" className="w-full h-12 text-lg bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg transition-all duration-300 transform hover:-translate-y-1">
                     Obter Avaliação Grátis
                   </Button>
                 </form>
@@ -183,6 +161,5 @@ export const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
