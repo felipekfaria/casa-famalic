@@ -46,7 +46,7 @@ export const HeroSection = () => {
         
         <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           
-          <h1 className="md:text-6xl font-black text-white leading-tight mb-6 lg:text-3xl text-3xl">
+          <h1 className="md:text-6xl font-black text-white leading-tight mb-6 text-3xl lg:text-4xl">
             Está a Pensar <span className="gradient-text">Vender</span> a Sua Casa?
           </h1>
           <p className="mt-6 text-xl lg:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
