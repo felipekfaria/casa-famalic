@@ -46,7 +46,7 @@ export const HeroSection = () => {
             {/* Professional Photo - Circular with elegant border */}
             <div className="flex justify-center mb-8">
               <div className="relative">
-                <img src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" alt="Miguel - Consultor Imobiliário" className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl border-4 border-white/30" />
+                <img src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" alt="Miguel - Consultor Imobiliário" className="w-80 h-96 lg:w-96 lg:h-[32rem] object-cover shadow-2xl" />
               </div>
             </div>
 
