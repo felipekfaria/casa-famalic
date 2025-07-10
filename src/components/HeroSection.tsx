@@ -4,8 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
-import heroImage from "@/assets/hero-image.jpg";
-import { MapPin, Home, Phone } from "lucide-react";
+import modernInteriorHero from "@/assets/modern-interior-hero.jpg";
+import { Trophy, Star } from "lucide-react";
 
 export const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -24,76 +24,68 @@ export const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20">
-      {/* Background Image */}
+      {/* Background Image with Dark Blue Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        style={{ backgroundImage: `url(${modernInteriorHero})` }}
       >
-        <div className="absolute inset-0 bg-primary/80"></div>
-      </div>
-
-      {/* Floating hexagonal icons */}
-      <div className="absolute top-20 left-10 opacity-30">
-        <div className="hexagon p-4 bg-accent/20">
-          <Home className="w-6 h-6 text-accent" />
-        </div>
-      </div>
-      <div className="absolute top-40 right-20 opacity-30">
-        <div className="hexagon p-4 bg-accent/20">
-          <MapPin className="w-6 h-6 text-accent" />
-        </div>
-      </div>
-      <div className="absolute bottom-40 left-20 opacity-30">
-        <div className="hexagon p-4 bg-accent/20">
-          <Phone className="w-6 h-6 text-accent" />
-        </div>
+        <div className="absolute inset-0 bg-primary/75"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Professional Photo and Hero Text */}
+      <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        {/* Left Side - Titles, Photo, and Professional Info */}
         <div className="text-center lg:text-left">
-          {/* Professional Photo - Large and Highlighted */}
+          {/* Titles at the top */}
+          <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            Está a Pensar Vender a Sua Casa?
+          </h1>
+          <p className="text-xl lg:text-2xl text-white/95 mb-12 font-medium">
+            Receba uma avaliação 100% gratuita e sem compromisso!
+          </p>
+          
+          {/* Professional Photo - Circular with elegant border */}
           <div className="flex justify-center lg:justify-start mb-8">
             <div className="relative">
               <img 
                 src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" 
-                alt="Consultor Imobiliário Profissional"
-                className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-8 border-white/20 backdrop-blur-sm"
+                alt="Miguel - Consultor Imobiliário"
+                className="w-64 h-64 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl border-4 border-white/30"
               />
-              {/* Professional badge overlay */}
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-accent text-accent-foreground px-6 py-3 rounded-lg shadow-lg font-bold">
-                Consultor Certificado
-              </div>
             </div>
           </div>
 
-          <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Está a Pensar Vender a Sua Casa?
-          </h1>
-          <p className="text-xl lg:text-2xl text-white/90 mb-8 font-medium">
-            Receba uma avaliação 100% gratuita e sem compromisso!
-          </p>
-          
-          {/* Additional professional info */}
-          <div className="hidden lg:block">
-            <div className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
-                <span className="text-xl font-bold text-accent-foreground">CC</span>
-              </div>
-              <div className="text-left">
-                <p className="text-white font-semibold">Cristina Carvalho</p>
-                <p className="text-white/80 text-sm">Consultora Imobiliária Certificada</p>
-                <p className="text-white/80 text-xs">+2000 Transações Realizadas</p>
-              </div>
+          {/* Professional Information - Elegant text block */}
+          <div className="text-center lg:text-left space-y-3">
+            <h3 className="text-2xl lg:text-3xl font-bold text-white">
+              Miguel Carvalho
+            </h3>
+            <p className="text-lg text-white/90 font-medium">
+              Consultor Imobiliário Certificado
+            </p>
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-accent">
+              <Trophy className="w-5 h-5" />
+              <span className="text-lg font-semibold text-white">
+                +2000 Transações Realizadas
+              </span>
+              <Star className="w-5 h-5 fill-accent" />
             </div>
           </div>
         </div>
 
         {/* Right Side - Contact Form */}
         <div className="flex justify-center lg:justify-end">
-          <Card className="w-full max-w-md shadow-2xl border-0">
+          <Card className="w-full max-w-md shadow-2xl border-0 bg-white">
             <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold text-foreground mb-2">
+                  Avaliação Gratuita
+                </h2>
+                <p className="text-muted-foreground">
+                  Preencha os dados e receba a sua avaliação
+                </p>
+              </div>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm font-medium">Nome *</Label>
@@ -102,7 +94,7 @@ export const HeroSection = () => {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="h-12"
+                    className="h-12 border-2 focus:border-accent"
                     required
                   />
                 </div>
@@ -114,7 +106,7 @@ export const HeroSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="h-12"
+                    className="h-12 border-2 focus:border-accent"
                     required
                   />
                 </div>
@@ -126,7 +118,7 @@ export const HeroSection = () => {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="h-12"
+                    className="h-12 border-2 focus:border-accent"
                     required
                   />
                 </div>
@@ -134,7 +126,7 @@ export const HeroSection = () => {
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Tipo de Imóvel *</Label>
                   <Select onValueChange={(value) => setFormData({ ...formData, propertyType: value })}>
-                    <SelectTrigger className="h-12">
+                    <SelectTrigger className="h-12 border-2 focus:border-accent">
                       <SelectValue placeholder="Seleccione o tipo" />
                     </SelectTrigger>
                     <SelectContent>
@@ -149,7 +141,7 @@ export const HeroSection = () => {
                 <div className="space-y-2">
                   <Label className="text-sm font-medium">Nº de Quartos</Label>
                   <Select onValueChange={(value) => setFormData({ ...formData, bedrooms: value })}>
-                    <SelectTrigger className="h-12">
+                    <SelectTrigger className="h-12 border-2 focus:border-accent">
                       <SelectValue placeholder="Seleccione" />
                     </SelectTrigger>
                     <SelectContent>
@@ -170,12 +162,15 @@ export const HeroSection = () => {
                     type="number"
                     value={formData.area}
                     onChange={(e) => setFormData({ ...formData, area: e.target.value })}
-                    className="h-12"
+                    className="h-12 border-2 focus:border-accent"
                     placeholder="Ex: 120"
                   />
                 </div>
 
-                <Button type="submit" className="btn-cta w-full h-12 text-lg">
+                <Button 
+                  type="submit" 
+                  className="w-full h-12 text-lg bg-accent hover:bg-accent/90 text-accent-foreground font-bold shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                >
                   Obter Avaliação Grátis
                 </Button>
               </form>
@@ -183,12 +178,6 @@ export const HeroSection = () => {
           </Card>
         </div>
       </div>
-
-      <style>{`
-        .hexagon {
-          clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
-        }
-      `}</style>
     </section>
   );
 };
