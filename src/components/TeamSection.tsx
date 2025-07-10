@@ -1,4 +1,4 @@
-import teamPhoto from "@/assets/team-photo.jpg";
+// Using uploaded team photo directly
 
 export const TeamSection = () => {
   return (
@@ -42,7 +42,7 @@ export const TeamSection = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <img 
-                src={teamPhoto} 
+                src="/lovable-uploads/fae1c356-2716-4e62-940c-d0f2a2e27b7f.png" 
                 alt="Equipa Cristina Carvalho"
                 className="rounded-lg shadow-2xl w-full max-w-md object-cover"
               />
