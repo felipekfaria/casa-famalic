@@ -1,19 +1,27 @@
-// Using uploaded team photo directly
+import algarveBackground from "@/assets/algarve-properties-background.jpg";
 
 export const TeamSection = () => {
   return (
-    <section className="py-20 px-4 bg-muted/30">
+    <section 
+      className="py-20 px-4 relative overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${algarveBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-8">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
               Gostaria também de lhe fazer uma breve apresentação!
             </h2>
             
-            <div className="space-y-6 text-lg leading-relaxed text-foreground/80">
+            <div className="space-y-6 text-lg leading-relaxed text-white/90">
               <p>
-                Olá, sou o <strong className="text-foreground">Miguel Monica</strong>. Como se costuma dizer, sou Portimonense de gema, e é aqui, no coração do Algarve, que a minha especialidade ganha vida. Para mim, tratar da venda do seu imóvel vai muito além de uma simples transação; é uma missão que assumo com total seriedade.
+                Olá, sou o <strong className="text-white">Miguel Monica</strong>. Como se costuma dizer, sou Portimonense de gema, e é aqui, no coração do Algarve, que a minha especialidade ganha vida. Para mim, tratar da venda do seu imóvel vai muito além de uma simples transação; é uma missão que assumo com total seriedade.
               </p>
               
               <p>
