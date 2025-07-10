@@ -13,27 +13,19 @@ export const TeamSection = () => {
             
             <div className="space-y-6 text-lg leading-relaxed text-foreground/80">
               <p>
-                Somos a <strong className="text-foreground">Equipa Cristina Carvalho</strong>, 
-                especialistas no mercado imobiliário desde 2010, com foco particular 
-                em Vila Nova de Famalicão e toda a região envolvente.
+                Olá, sou o <strong className="text-foreground">Miguel Monica</strong>. Como se costuma dizer, sou Portimonense de gema, e é aqui, no coração do Algarve, que a minha especialidade ganha vida. Para mim, tratar da venda do seu imóvel vai muito além de uma simples transação; é uma missão que assumo com total seriedade.
               </p>
               
               <p>
-                A nossa paixão é ajudar pessoas como você a encontrar as melhores 
-                soluções para os seus imóveis. A nossa equipa é composta por 
-                consultores experientes, uma coordenadora dedicada e uma advogada 
-                especializada, garantindo que todo o processo burocrático seja 
-                tratado com máximo profissionalismo.
-              </p>
-              
-              <p className="text-xl font-semibold text-accent">
-                Já fizemos mais de 2000 transações
+                A vida já me ensinou que os maiores desafios não se vencem com sorte, mas com garra. Tal como aprendi a ler as marés quando era skipper, hoje aplico essa mesma intuição para navegar o mercado imobiliário. A resiliência que o desporto me deu é a mesma que uso para defender o valor do seu património até à última. Isto não é só conversa, é a minha forma de estar.
               </p>
               
               <p>
-                Este número não é apenas uma estatística - representa mais de 
-                2000 famílias que confiaram em nós para realizar os seus sonhos 
-                imobiliários, seja na compra ou venda da sua casa.
+                Pode contar com um plano meticuloso, pensado para si, e com o apoio de toda a estrutura da Century 21, que assegura que toda a parte burocrática decorra sem sobressaltos. Porque a sua tranquilidade é uma prioridade.
+              </p>
+              
+              <p>
+                Para mim, cada negócio fechado não entra para a estatística. Representa a confiança de mais uma família que me entregou a chave de um dos seus maiores objetivos. E é com esse mesmo respeito e dedicação que quero tratar do seu.
               </p>
             </div>
           </div>
