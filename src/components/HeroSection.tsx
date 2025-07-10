@@ -25,7 +25,7 @@ export const HeroSection = () => {
     <section className="relative min-h-screen flex flex-col justify-center px-4 py-16">
       {/* Background Image with Dark Blue Overlay */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${modernInteriorHero})` }}>
-        <div className="absolute inset-0 bg-blue-900/80"></div>
+        <div className="absolute inset-0 bg-gray-900/80"></div>
       </div>
 
       {/* Content Container */}

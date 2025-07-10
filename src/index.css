@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors - new blue-themed palette */
+    /* Base colors - sophisticated grey palette */
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
@@ -18,28 +18,28 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    /* Dark blue as primary overlay color */
-    --primary: 217 91% 15%;
+    /* Dark charcoal grey as primary color */
+    --primary: 0 0% 15%;
     --primary-foreground: 0 0% 100%;
 
-    /* Sophisticated gold/ochre for CTAs */
-    --accent: 38 92% 50%;
+    /* Sophisticated gold for CTAs and highlights */
+    --accent: 45 100% 51%;
     --accent-foreground: 0 0% 0%;
 
-    /* Light blue tones for cards */
-    --muted: 217 50% 95%;
-    --muted-foreground: 217 20% 40%;
+    /* Light grey tones for cards */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Secondary using medium blue */
-    --secondary: 217 50% 25%;
+    /* Medium grey for secondary elements */
+    --secondary: 0 0% 25%;
     --secondary-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 217 30% 85%;
+    --border: 0 0% 85%;
     --input: 0 0% 100%;
-    --ring: 38 92% 50%;
+    --ring: 45 100% 51%;
 
     --radius: 0.5rem;
 
