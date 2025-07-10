@@ -18,20 +18,20 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    /* Dark charcoal grey as primary color */
-    --primary: 0 0% 15%;
+    /* Light charcoal grey as primary color */
+    --primary: 0 0% 25%;
     --primary-foreground: 0 0% 100%;
 
-    /* Sophisticated gold for CTAs and highlights */
-    --accent: 45 100% 51%;
-    --accent-foreground: 0 0% 0%;
+    /* Custom gold color #938155 */
+    --accent: 43 27% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Light grey tones for cards */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    /* Very light grey tones for cards */
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 55%;
 
-    /* Medium grey for secondary elements */
-    --secondary: 0 0% 25%;
+    /* Light grey for secondary elements */
+    --secondary: 0 0% 35%;
     --secondary-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
