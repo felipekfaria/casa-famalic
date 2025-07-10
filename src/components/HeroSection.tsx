@@ -51,8 +51,23 @@ export const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Side - Hero Text */}
+        {/* Left Side - Professional Photo and Hero Text */}
         <div className="text-center lg:text-left">
+          {/* Professional Photo - Large and Highlighted */}
+          <div className="flex justify-center lg:justify-start mb-8">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" 
+                alt="Consultor Imobiliário Profissional"
+                className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-full shadow-2xl border-8 border-white/20 backdrop-blur-sm"
+              />
+              {/* Professional badge overlay */}
+              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-accent text-accent-foreground px-6 py-3 rounded-lg shadow-lg font-bold">
+                Consultor Certificado
+              </div>
+            </div>
+          </div>
+
           <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Está a Pensar Vender a Sua Casa?
           </h1>
@@ -60,15 +75,16 @@ export const HeroSection = () => {
             Receba uma avaliação 100% gratuita e sem compromisso!
           </p>
           
-          {/* Professional photo placeholder - could be added here */}
-          <div className="hidden lg:block mt-8">
+          {/* Additional professional info */}
+          <div className="hidden lg:block">
             <div className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-lg p-4">
               <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center">
                 <span className="text-xl font-bold text-accent-foreground">CC</span>
               </div>
               <div className="text-left">
                 <p className="text-white font-semibold">Cristina Carvalho</p>
-                <p className="text-white/80 text-sm">Consultora Imobiliária</p>
+                <p className="text-white/80 text-sm">Consultora Imobiliária Certificada</p>
+                <p className="text-white/80 text-xs">+2000 Transações Realizadas</p>
               </div>
             </div>
           </div>
