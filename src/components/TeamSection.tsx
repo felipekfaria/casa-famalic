@@ -34,8 +34,8 @@ export const TeamSection = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <img 
-                src="/lovable-uploads/fae1c356-2716-4e62-940c-d0f2a2e27b7f.png" 
-                alt="Equipa Cristina Carvalho"
+                src="/lovable-uploads/6867d621-1687-4142-aae7-60a38f86577a.png" 
+                alt="Miguel Monica - Consultor Imobiliário"
                 className="rounded-lg shadow-2xl w-full max-w-md object-cover"
               />
               <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-lg shadow-lg">
