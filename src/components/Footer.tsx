@@ -1,6 +1,5 @@
 export const Footer = () => {
-  return (
-    <footer className="bg-foreground text-background py-12 px-4">
+  return <footer className="bg-foreground text-background py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <div className="flex justify-center items-center gap-4 mb-4">
@@ -8,7 +7,7 @@ export const Footer = () => {
               21
             </div>
             <div>
-              <h3 className="text-xl font-bold">Equipa Cristina Carvalho</h3>
+              <h3 className="text-xl font-bold">Miguel Mónica</h3>
               <p className="text-background/80">Remax Vila Nova</p>
             </div>
           </div>
@@ -33,6 +32,5 @@ export const Footer = () => {
           <p>&copy; 2024 Equipa Cristina Carvalho, Remax Vila Nova. Todos os direitos reservados.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
