@@ -8,7 +8,10 @@ export const Footer = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold">Miguel Mónica</h3>
-              <p className="text-background/80">Remax Vila Nova</p>
+              <p className="text-background/80">CENTURY 21 Realty Art II
+
+
+            </p>
             </div>
           </div>
         </div>
@@ -29,7 +32,7 @@ export const Footer = () => {
         </div>
 
         <div className="text-center text-background/60 text-sm">
-          <p>&copy; 2024 Equipa Cristina Carvalho, Remax Vila Nova. Todos os direitos reservados.</p>
+          <p>© 2025 Miguel Mónica, CENTURY 21 Realty Art II. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>;
