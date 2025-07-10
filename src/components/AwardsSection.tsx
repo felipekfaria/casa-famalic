@@ -1,21 +1,16 @@
-import { Award, Trophy, Star } from "lucide-react";
-
 export const AwardsSection = () => {
   const awards = [
     {
-      icon: <Trophy className="w-8 h-8" />,
-      title: "EQUIPA Nº1",
-      subtitle: "ZONA NORTE"
+      image: "/lovable-uploads/611c6a05-f08b-4bd0-9798-afb98ffa1741.png",
+      alt: "Master Ruby Producer 2022"
     },
     {
-      icon: <Star className="w-8 h-8" />,
-      title: "TOP 3 NACIONAL",
-      subtitle: "IMÓVEIS VENDIDOS"
+      image: "/lovable-uploads/503a0c8c-fe58-4833-b042-6df4736822ca.png",
+      alt: "Master Ruby Producer 2023"
     },
     {
-      icon: <Award className="w-8 h-8" />,
-      title: "25º",
-      subtitle: "A NÍVEL MUNDIAL"
+      image: "/lovable-uploads/13f74af9-5f84-4805-91ad-4c2af3dfcef7.png",
+      alt: "Master Diamond Producer 2024"
     }
   ];
 
@@ -31,16 +26,12 @@ export const AwardsSection = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {awards.map((award, index) => (
             <div key={index} className="text-center">
-              <div className="award-badge mx-auto w-32 h-32 flex flex-col items-center justify-center mb-4">
-                {award.icon}
-                <div className="mt-2">
-                  <div className="font-bold text-lg leading-tight">
-                    {award.title}
-                  </div>
-                  <div className="text-sm font-medium">
-                    {award.subtitle}
-                  </div>
-                </div>
+              <div className="mx-auto w-48 h-48 flex items-center justify-center mb-4">
+                <img 
+                  src={award.image} 
+                  alt={award.alt}
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
           ))}
