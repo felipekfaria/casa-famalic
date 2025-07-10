@@ -8,30 +8,30 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Base colors - sophisticated grey palette */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Sherwin Williams inspired palette */
+    --background: 0 0% 100%;  /* Site White */
+    --foreground: 0 0% 15%;   /* Iron Ore */
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card-foreground: 0 0% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Light charcoal grey as primary color */
-    --primary: 0 0% 25%;
+    /* Obsessed Grey for primary elements */
+    --primary: 0 0% 15%;      /* #252526 equivalent */
     --primary-foreground: 0 0% 100%;
 
-    /* Custom gold color #938155 */
-    --accent: 43 27% 45%;
+    /* Relentless Gold for accents */
+    --accent: 43 27% 45%;     /* Sawgrass Basket tone */
     --accent-foreground: 0 0% 100%;
 
-    /* Very light grey tones for cards */
-    --muted: 0 0% 98%;
-    --muted-foreground: 0 0% 55%;
+    /* Light Grey for muted backgrounds */
+    --muted: 0 0% 91%;        /* #E6E7E8 equivalent */
+    --muted-foreground: 0 0% 40%;
 
-    /* Light grey for secondary elements */
-    --secondary: 0 0% 35%;
+    /* Medium Grey for secondary elements */
+    --secondary: 0 0% 51%;    /* #808285 equivalent */
     --secondary-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -39,63 +39,58 @@ All colors MUST be HSL.
 
     --border: 0 0% 85%;
     --input: 0 0% 100%;
-    --ring: 45 100% 51%;
+    --ring: 43 27% 45%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 0 0% 15%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 0 0% 91%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 43 27% 45%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode using Iron Ore and darker tones */
+    --background: 0 0% 15%;   /* Iron Ore */
+    --foreground: 0 0% 91%;   /* Light Grey */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 91%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 91%;
+    --primary-foreground: 0 0% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 91%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 43 27% 55%;     /* Lighter gold for dark mode */
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 91%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 43 27% 55%;
+    
+    --sidebar-background: 0 0% 15%;
+    --sidebar-foreground: 0 0% 91%;
+    --sidebar-primary: 43 27% 55%;
+    --sidebar-primary-foreground: 0 0% 15%;
+    --sidebar-accent: 0 0% 25%;
+    --sidebar-accent-foreground: 0 0% 91%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 43 27% 55%;
   }
 }
 
