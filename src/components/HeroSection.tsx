@@ -64,7 +64,7 @@ export const HeroSection = () => {
           <div className={`flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <img src="/lovable-uploads/8a1a0f18-19d7-4095-932b-0746ea3ffbfa.png" alt="Miguel Carvalho - Consultor Imobiliário" className="relative w-full max-w-md h-auto rounded-2xl object-cover shadow-2xl transform transition-all duration-500 group-hover:scale-105" />
+              <img src="/lovable-uploads/1fe372f0-fe91-40b5-8c2a-7c71729ba9da.png" alt="Miguel Carvalho - Consultor Imobiliário" className="relative w-full max-w-md h-auto rounded-2xl object-cover shadow-2xl transform transition-all duration-500 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent rounded-b-2xl">
                 <h3 className="text-2xl font-bold text-white mb-1">Miguel Carvalho</h3>
                 <p className="text-accent font-medium">Consultor Imobiliário Certificado</p>
