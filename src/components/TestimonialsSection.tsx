@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
-export const TestimonialsSection = () => {
+// 1. Definimos a interface de props para receber a função de rolagem
+interface TestimonialsSectionProps {
+  onScrollToForm: () => void;
+}
+
+// 2. Recebemos 'onScrollToForm' como uma prop
+export const TestimonialsSection = ({ onScrollToForm }: TestimonialsSectionProps) => {
   const testimonials = [
     {
       name: "Maria Silva",
@@ -42,6 +48,9 @@ export const TestimonialsSection = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-8">
             O que dizem os meus clientes:
           </h2>
+          <p>
+          Veja o que dizem pessoas que, tal como você, quiseram vender o seu imóvel com confiança e segurança:
+          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -67,7 +76,8 @@ export const TestimonialsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="btn-cta text-lg">
+          {/* 3. Adicionamos o 'onClick' ao botão para chamar a função */}
+          <Button onClick={onScrollToForm} className="btn-cta text-lg">
             Obter Avaliação Grátis
           </Button>
         </div>

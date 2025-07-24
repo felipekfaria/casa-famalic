@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { FileText, Phone, Home } from "lucide-react";
 
-export const ProcessSection = () => {
+// 1. Definimos uma interface para as props que o componente vai receber.
+// Estamos a dizer que ele espera receber uma função chamada 'onScrollToForm'.
+interface ProcessSectionProps {
+  onScrollToForm: () => void;
+}
+
+// 2. Recebemos 'onScrollToForm' como uma prop.
+export const ProcessSection = ({ onScrollToForm }: ProcessSectionProps) => {
   const steps = [
     {
       icon: <FileText className="w-8 h-8 text-secondary-foreground" />,
@@ -16,7 +23,7 @@ export const ProcessSection = () => {
     {
       icon: <Home className="w-8 h-8 text-secondary-foreground" />,
       title: "3. Visita de Avaliação",
-      description: "Em 30 minutos será realizada a visita de avaliação e em 48 horas saberá o valor de mercado da sua casa!"
+      description: "Em menos de 48 horas saberá o valor real do seu imóvel. Com base no mercado atual e análise local especializada."
     }
   ];
 
@@ -25,7 +32,7 @@ export const ProcessSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Simples, rápido e fica sempre a ganhar
+          Como funciona e porque é tão simples trabalhar comigo
           </h2>
         </div>
 
@@ -48,7 +55,8 @@ export const ProcessSection = () => {
         </div>
 
         <div className="text-center">
-          <Button className="btn-cta text-lg">
+          {/* 3. Adicionamos o 'onClick' ao botão para chamar a função que recebemos. */}
+          <Button onClick={onScrollToForm} className="btn-cta text-lg">
             Obter Avaliação Grátis
           </Button>
         </div>

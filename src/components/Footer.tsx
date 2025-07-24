@@ -1,5 +1,14 @@
-export const Footer = () => {
-  return <footer className="bg-foreground text-background py-12 px-4">
+import { Button } from "@/components/ui/button";
+
+// 1. Definimos a interface para as props
+interface FooterProps {
+  onScrollToForm: () => void;
+}
+
+// 2. Recebemos 'onScrollToForm' como prop
+export const Footer = ({ onScrollToForm }: FooterProps) => {
+  return (
+    <footer className="bg-foreground text-background py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <div className="flex justify-center items-center gap-4 mb-4">
@@ -8,12 +17,16 @@ export const Footer = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold">Miguel Mónica</h3>
-              <p className="text-background/80">CENTURY 21 Realty Art II
-
-
-            </p>
+              <p className="text-background/80">CENTURY 21 Realty Art II</p>
             </div>
           </div>
+        </div>
+
+        {/* 3. BOTÃO ADICIONADO AQUI */}
+        <div className="text-center mb-8">
+          <Button onClick={onScrollToForm} className="btn-cta text-lg">
+            Quero a Minha Avaliação Grátis
+          </Button>
         </div>
 
         <div className="flex flex-wrap justify-center gap-6 text-sm mb-8">
@@ -35,5 +48,6 @@ export const Footer = () => {
           <p>© 2025 Miguel Mónica, CENTURY 21 Realty Art II. Todos os direitos reservados.</p>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };

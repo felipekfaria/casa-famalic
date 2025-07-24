@@ -15,6 +15,9 @@ export const AwardsSection = () => {
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-8">
             Prémios
           </h2>
+          <p>
+          🏅 Reconhecido nacionalmente pela CENTURY 21 com os prémios mais prestigiados do setor, ano após ano.
+          </p>        
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
