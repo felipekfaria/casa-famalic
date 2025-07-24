@@ -11,22 +11,22 @@ export const TestimonialsSection = ({ onScrollToForm }: TestimonialsSectionProps
   const testimonials = [
     {
       name: "Maria Silva",
-      text: "Excelente profissional! A Cristina e a sua equipa superaram todas as minhas expectativas. Venderam a minha casa em apenas 3 semanas. Recomendo vivamente!",
+      text: "Vendemos a casa em 3 semanas, sem complicações. A equipa superou tudo o que esperava!",
       avatar: "MS"
     },
     {
       name: "João Santos",
-      text: "Profissionalismo e transparência em todo o processo. Sempre disponíveis para esclarecer dúvidas e apoiar em todas as fases da venda. Cinco estrelas!",
+      text: "Tive apoio em cada passo. Tudo foi explicado com clareza e feito com total profissionalismo.",
       avatar: "JS"
     },
     {
       name: "Ana Costa",
-      text: "Simpatia, competência e dedicação. Conseguiram um valor acima do esperado para o meu apartamento. Muito obrigada por todo o apoio!",
+      text: "Conseguiram vender acima do valor esperado! Estou muito grata pela dedicação e simpatia.",
       avatar: "AC"
     },
     {
       name: "Pedro Oliveira",
-      text: "Desde o primeiro contacto até à assinatura da escritura, tudo correu perfeitamente. Equipa fantástica, muito profissional e humana.",
+      text: "Do primeiro contacto até à escritura: tudo foi impecável. Uma equipa humana, séria e muito eficaz.",
       avatar: "PO"
     }
   ];
@@ -46,7 +46,7 @@ export const TestimonialsSection = ({ onScrollToForm }: TestimonialsSectionProps
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-8">
-            O que dizem os meus clientes:
+          A confiança dos meus clientes diz tudo
           </h2>
           <p>
           Veja o que dizem pessoas que, tal como você, quiseram vender o seu imóvel com confiança e segurança:

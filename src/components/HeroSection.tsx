@@ -1,4 +1,3 @@
-// 1. IMPORTAMOS forwardRef
 import { useState, useEffect, forwardRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,8 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 // Importação das imagens locais
 import modernInteriorHero from "@/assets/modern-interior-hero.jpg";
 import miguelImage from "@/assets/miguel-pg.png"; 
+import logoMiguel from "@/assets/logo-miguel.png";
 
-// 2. ENVOLVEMOS O COMPONENTE COM forwardRef PARA PODER RECEBER A REF
 export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -30,7 +29,8 @@ export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-4 py-12 overflow-hidden">
+    // A ALTERAÇÃO ESTÁ AQUI: pt-16 alterado para pt-8 para SUBIR o conteúdo drasticamente.
+    <section className="relative min-h-screen flex flex-col justify-start px-4 pt-8 pb-12 overflow-hidden">
       {/* Imagem de fundo escura com overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
@@ -44,9 +44,9 @@ export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
         
         <div className={`text-center mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           
-          <h2 className="text-3xl font-bold text-white tracking-wider mb-4">
-            Miguel Mónica
-          </h2>
+          <div className="flex justify-center mb-6">
+            <img src={logoMiguel} alt="Logo Miguel Mónica" className="w-56 h-auto" />
+          </div>
 
           {/* Título com fundo de cor sólida e cantos retos */}
           <div className="py-4 lg:inline-block lg:py-2 lg:px-4" style={{ backgroundColor: '#8F7E53' }}>
@@ -80,7 +80,7 @@ export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
             </div>
           </div>
 
-          {/* 3. APLICAMOS A REF AO CONTAINER DO FORMULÁRIO */}
+          {/* Coluna do Formulário */}
           <div ref={ref} className={`flex justify-center lg:justify-start w-full transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="w-full max-w-md bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
               <div className="text-center mb-6">
