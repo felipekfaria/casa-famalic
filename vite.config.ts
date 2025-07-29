@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   // ADICIONE A LINHA "base" ABAIXO:
-  base: "/casa-famalic/", 
+  base: '/', 
   plugins: [
     react(),
     mode === 'development' &&
