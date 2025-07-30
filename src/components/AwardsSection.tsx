@@ -1,11 +1,18 @@
-// 1. IMPORTAMOS AS IMAGENS DIRETAMENTE NO CÓDIGO
+// 1. IMPORTAMOS O COMPONENTE 'Button'
+import { Button } from "@/components/ui/button";
+
+// Importamos as imagens diretamente no código
 import award2022 from "@/assets/611c6a05-f08b-4bd0-9798-afb98ffa1741.png";
 import award2023 from "@/assets/503a0c8c-fe58-4833-b042-6df4736822ca.png";
 import award2024 from "@/assets/13f74af9-5f84-4805-91ad-4c2af3dfcef7.png";
 
+// 2. DEFINIMOS A INTERFACE PARA AS PROPS
+interface AwardsSectionProps {
+  onScrollToForm: () => void;
+}
 
-export const AwardsSection = () => {
-  // 2. USAMOS AS VARIÁVEIS IMPORTADAS EM VEZ DOS CAMINHOS DE TEXTO
+// 3. O COMPONENTE AGORA ACEITA A PROP 'onScrollToForm'
+export const AwardsSection = ({ onScrollToForm }: AwardsSectionProps) => {
   const awards = [{
     image: award2022,
     alt: "Master Ruby Producer 2022"
@@ -39,8 +46,11 @@ export const AwardsSection = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
-          
+        {/* 4. ADICIONÁMOS O BOTÃO E LIGÁMO-LO À FUNÇÃO onScrollToForm */}
+        <div className="text-center mt-16">
+          <Button onClick={onScrollToForm} className="btn-cta text-lg">
+            Quero a Minha Avaliação Grátis
+          </Button>
         </div>
       </div>
     </section>

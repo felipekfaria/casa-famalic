@@ -1,16 +1,17 @@
-import { useRef } from "react"; // 1. Importamos o hook useRef
+import { useRef } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { ProcessSection } from "@/components/ProcessSection";
+import { VideoSection } from "@/components/VideoSection";
 import { TeamSection } from "@/components/TeamSection";
 import { AwardsSection } from "@/components/AwardsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
-  // 2. Criamos a referência que vai "apontar" para o formulário
+  // Criamos a referência que vai "apontar" para o formulário
   const formRef = useRef<HTMLDivElement>(null);
 
-  // 3. Criamos a função que executa a rolagem suave
+  // Criamos a função que executa a rolagem suave
   const handleScrollToForm = () => {
     formRef.current?.scrollIntoView({ 
       behavior: 'smooth',
@@ -20,15 +21,25 @@ const Index = () => {
 
   return (
     <main className="min-h-screen">
-      {/* 4. Passamos a 'ref' para a HeroSection. Ela já está pronta para receber. */}
+      {/* 1ª Secção */}
       <HeroSection ref={formRef} />
 
-      {/* 5. Passamos a função de rolagem para os outros componentes que terão o botão. */}
-      {/* Eu presumi que Process, Awards e Footer terão o botão. Team e Testimonials talvez não. */}
+      {/* 2ª Secção */}
       <ProcessSection onScrollToForm={handleScrollToForm} />
+
+      {/* 3ª SECÇÃO (O VÍDEO FOI MOVIDO PARA AQUI) */}
+      <VideoSection />
+      
+      {/* 4ª Secção */}
       <TeamSection /> 
-      <AwardsSection />
+      
+      {/* 5ª Secção */}
+      <AwardsSection onScrollToForm={handleScrollToForm} />
+      
+      {/* 6ª Secção */}
       <TestimonialsSection onScrollToForm={handleScrollToForm} />
+      
+      {/* 7ª Secção (Rodapé) */}
       <Footer onScrollToForm={handleScrollToForm} />
     </main>
   );

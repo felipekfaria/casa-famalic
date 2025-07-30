@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import ThankYou from "./pages/ThankYou";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +16,13 @@ const App = () => (
       <Sonner />
       <HashRouter>
         <Routes>
+          {/* Rota da Página Principal */}
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          
+          {/* Rota da Página de Agradecimento */}
+          <Route path="/obrigado" element={<ThankYou />} />
+          
+          {/* A Rota "Catch-all" (Não Encontrado) DEVE SER SEMPRE A ÚLTIMA */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </HashRouter>
