@@ -11,7 +11,7 @@ export const TestimonialsSection = ({ onScrollToForm }: TestimonialsSectionProps
   const testimonials = [
     {
       name: "Maria Silva",
-      text: "Vendemos a casa em 3 semanas, sem complicações. A equipa superou tudo o que esperava!",
+      text: "Vendemos a casa em 3 semanas, sem complicações. O Miguel superou tudo o que esperava!",
       avatar: "MS"
     },
     {
@@ -21,12 +21,12 @@ export const TestimonialsSection = ({ onScrollToForm }: TestimonialsSectionProps
     },
     {
       name: "Ana Costa",
-      text: "Conseguiram vender acima do valor esperado! Estou muito grata pela dedicação e simpatia.",
+      text: "O Miguel conseguiu vender acima do valor esperado! Estou muito grata pela dedicação e simpatia.",
       avatar: "AC"
     },
     {
       name: "Pedro Oliveira",
-      text: "Do primeiro contacto até à escritura: tudo foi impecável. Uma equipa humana, séria e muito eficaz.",
+      text: "Do primeiro contacto até à escritura: tudo foi impecável. O Miguel é um profissional humano, sério e muito eficaz.",
       avatar: "PO"
     }
   ];

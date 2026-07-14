@@ -7,7 +7,7 @@ import { toast } from "sonner";
 
 // Importação das imagens locais
 import modernInteriorHero from "@/assets/modern-interior-hero.jpg";
-import miguelImage from "@/assets/miguel-pg2.png"; 
+import miguelImage from "@/assets/miguel-pg2.webp";
 import logoMiguel from "@/assets/logo-miguel.png";
 
 export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
@@ -22,8 +22,16 @@ export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
     setIsVisible(true);
   }, []);
 
+  // progresso do preenchimento (barra no topo do formulário)
+  const fields = [formData.name, formData.email, formData.phone, formData.propertyType, formData.bedrooms, formData.area];
+  const progress = Math.round((fields.filter(v => v.trim() !== "").length / fields.length) * 100);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.propertyType) {
+      toast.error("Por favor, selecione o tipo de imóvel.");
+      return;
+    }
     setIsSubmitting(true);
 
     try {
@@ -72,6 +80,21 @@ export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
               100% gratuita e sem compromisso.
             </h3>
           </div>
+
+          <div className="mt-10 grid grid-cols-3 max-w-2xl mx-auto divide-x divide-white/20 text-center">
+            <div className="px-3">
+              <p className="text-3xl lg:text-4xl font-extrabold" style={{ color: '#D9C58C' }}>+100</p>
+              <p className="text-[11px] lg:text-xs uppercase tracking-wider text-white/70 mt-1">Imóveis vendidos</p>
+            </div>
+            <div className="px-3">
+              <p className="text-3xl lg:text-4xl font-extrabold" style={{ color: '#D9C58C' }}>15+</p>
+              <p className="text-[11px] lg:text-xs uppercase tracking-wider text-white/70 mt-1">Anos de mercado CENTURY 21</p>
+            </div>
+            <div className="px-3">
+              <p className="text-3xl lg:text-4xl font-extrabold" style={{ color: '#D9C58C' }}>100%</p>
+              <p className="text-[11px] lg:text-xs uppercase tracking-wider text-white/70 mt-1">Gratuito e sem compromisso</p>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -83,9 +106,26 @@ export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
 
           <div ref={ref} className={`flex justify-center lg:justify-start w-full transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="w-full max-w-md bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-white/20">
-              <div className="text-center mb-6">
+              <div className="text-center mb-5">
                 <h3 className="text-2xl font-bold text-gray-800 mb-2">Avaliação Gratuita</h3>
                 <p className="text-gray-600">Descubra o valor real do seu imóvel</p>
+              </div>
+              <div className="mb-5">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-medium text-gray-500">O seu pedido de avaliação</span>
+                  <span className="text-xs font-bold text-accent">{progress}% concluído</span>
+                </div>
+                <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-accent rounded-full transition-all duration-500 ease-out"
+                    style={{ width: `${Math.max(progress, 4)}%` }}
+                  />
+                </div>
+                {progress === 100 && (
+                  <p className="text-xs text-accent font-semibold mt-2 text-center">
+                    Tudo pronto! Clique no botão abaixo 👇
+                  </p>
+                )}
               </div>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <input type="hidden" name="_cc" value={formData.email} />
@@ -145,7 +185,17 @@ export const HeroSection = forwardRef<HTMLDivElement>((props, ref) => {
                   {isSubmitting ? 'A enviar...' : '🏠 Obter Avaliação Grátis'}
                 </Button>
                 <div className="text-center pt-2">
-                  <p className="text-xs text-gray-500 mb-2">🔒 Os seus dados estão seguros. Respeitamos a sua privacidade.</p>
+                  <p className="text-xs text-gray-500 mb-2">
+                    🔒 Os seus dados estão seguros. Ao submeter, declara que leu e aceita a{" "}
+                    <a
+                      href="https://www.century21.pt/termos-e-condicoes"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-accent transition-colors"
+                    >
+                      Política de Privacidade
+                    </a>.
+                  </p>
                   <div className="flex justify-center space-x-4 text-xs text-gray-400">
                     <span>✅ Sem compromisso</span>
                     <span>⏱️ Resposta em 24h</span>

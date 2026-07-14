@@ -30,9 +30,9 @@ export const TeamSection = () => {
           Acredito que vender um imóvel vai muito além de uma transação: é uma mudança de vida. Por isso, trabalho com o mesmo foco e dedicação com que se prepara uma grande conquista.
           </p>
           
-          <p>- Mais de 15 anos no mercado imobiliário algarvio</p>
-          <p>- +2.000 transações concluídas com sucesso</p>
-          <p>- Especialista local com o apoio total da CENTURY 21</p>
+          <p>- 5 anos de experiência no mercado imobiliário algarvio</p>
+          <p>- Mais de 100 imóveis vendidos com sucesso</p>
+          <p>- Especialista local com o apoio total da CENTURY 21, uma agência com mais de 15 anos de mercado</p>
           <p>Aqui, cada etapa é cuidada ao detalhe para garantir uma venda segura, transparente e sem stress.</p>
         </div>
 

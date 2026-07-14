@@ -2,9 +2,9 @@
 import { Button } from "@/components/ui/button";
 
 // Importamos as imagens diretamente no código
-import award2022 from "@/assets/611c6a05-f08b-4bd0-9798-afb98ffa1741.png";
-import award2023 from "@/assets/503a0c8c-fe58-4833-b042-6df4736822ca.png";
-import award2024 from "@/assets/13f74af9-5f84-4805-91ad-4c2af3dfcef7.png";
+import award2023 from "@/assets/award-esmeralda-2023.webp";
+import award2024 from "@/assets/award-diamond-2024.webp";
+import award2025 from "@/assets/award-centuriao-2025.webp";
 
 // 2. DEFINIMOS A INTERFACE PARA AS PROPS
 interface AwardsSectionProps {
@@ -14,14 +14,14 @@ interface AwardsSectionProps {
 // 3. O COMPONENTE AGORA ACEITA A PROP 'onScrollToForm'
 export const AwardsSection = ({ onScrollToForm }: AwardsSectionProps) => {
   const awards = [{
-    image: award2022,
-    alt: "Master Ruby Producer 2022"
-  }, {
     image: award2023,
-    alt: "Master Ruby Producer 2023"
+    alt: "Esmeralda Producer 2023"
   }, {
     image: award2024,
     alt: "Master Diamond Producer 2024"
+  }, {
+    image: award2025,
+    alt: "Centurião Producer 2025"
   }];
   
   return (
@@ -40,7 +40,7 @@ export const AwardsSection = ({ onScrollToForm }: AwardsSectionProps) => {
           {awards.map((award, index) => (
             <div key={index} className="text-center">
               <div className="mx-auto w-48 h-48 flex items-center justify-center mb-4">
-                <img src={award.image} alt={award.alt} className="w-full h-full object-contain" />
+                <img src={award.image} alt={award.alt} loading="lazy" className="w-full h-full object-contain" />
               </div>
             </div>
           ))}
